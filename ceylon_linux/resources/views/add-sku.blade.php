@@ -27,65 +27,73 @@
                     <div class="form-group row">
                         <label for="sku_code" class="col-sm-4 col-form-label">SKU Code<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="sku_code">
+                            <input type="text" class="form-control" name="sku_code" value="{{ old('sku_code') }}">
+                            <!-- validation custom message -->
+                            @error('sku_code')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="sku_name" class="col-sm-4 col-form-label">SKU Name<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="sku_name" placeholder="Main Product Name/auto">
+                            <input type="text" class="form-control" name="sku_name" placeholder="Main Product Name/auto" value="{{ old('sku_name') }}">
+                            <!-- validation custom message -->
+                            @error('sku_name')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="mrp" class="col-sm-4 col-form-label">MRP<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="mrp">
+                            <input type="text" class="form-control" name="mrp" value="{{ old('mrp') }}">
+                            <!-- validation custom message -->
+                            @error('mrp')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="distributor_price" class="col-sm-4 col-form-label">Distributor Price<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="distributor_price">
+                            <input type="text" class="form-control" name="distributor_price" value="{{ old('distributor_price') }}">
+                            <!-- validation custom message -->
+                            @error('distributor_price')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row g-3">
                         <label for="weight/volume" class="col-sm-4 col-form-label">Weight/Volume<span class="text-danger">*</span></label>
 
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="weight_volume_value">
-
+                            <input type="text" class="form-control" name="weight_volume_value" value="{{ old('weight_volume_value') }}">
+                            <!-- validation custom message -->
+                            @error('weight_volume_value')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="col-sm-2">
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="weight_volume_unit">
-                                <option selected></option>
-                                <option value="mg">mg</option>
-                                <option value="g">g</option>
-                                <option value="kg">kg</option>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="weight_volume_unit" value="{{old('weight_volume_unit')}}">
+                                <option value=""></option>
+                                <option value="mg" @if(old('weight_volume_unit')==='mg' ) selected @endif>mg</option>
+                                <option value="g" @if(old('weight_volume_unit')==='g' ) selected @endif>g</option>
+                                <option value="kg" @if(old('weight_volume_unit')==='kg' ) selected @endif>kg</option>
                             </select>
-
+                            <!-- validation custom message -->
+                            @error('weight_volume_unit')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
-
-
                     </div>
-
-
                     <div class="text-center">
                         <button type="submit" class="btn btn-success col-sm-3">SAVE</button>
                     </div>
-
             </div>
             </form>
-
         </div>
     </div>
-
-
-
-
-
-
-
-
 </body>
 
 </html>

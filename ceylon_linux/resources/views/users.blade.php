@@ -4,11 +4,7 @@
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-
-
 </head>
-
 
 <body>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -103,11 +99,8 @@
                             @error('territory')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
-
-
                         </div>
                     </div>
-
                     <div class="form-group row">
                         <label for="userName" class="col-sm-4 col-form-label">User Name<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
@@ -128,24 +121,13 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="text-center">
                         <button type="submit" class="btn btn-success col-sm-3">SAVE</button>
                     </div>
-
             </div>
             </form>
-
         </div>
     </div>
-
-
-
-
-
-
-
-
 </body>
 
 </html>

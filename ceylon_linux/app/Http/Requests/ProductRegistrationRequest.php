@@ -30,4 +30,17 @@ class ProductRegistrationRequest extends FormRequest
             'weight_volume_unit' => 'required|string|in:mg,g,kg',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'sku_code.required' => 'The SKU Code field is required.',
+            'sku_name.required' => 'The SKU Name field is required.',
+            'mrp.required' => 'The MRP field is required.',
+            'distributor_price.required' => 'The Distributor Price field is required.',
+            'weight_volume_value.required' => 'The Weight/Volume field is required.',
+            'weight_volume_unit.required' => 'Please select a unit.',
+
+        ];
+    }
 }
