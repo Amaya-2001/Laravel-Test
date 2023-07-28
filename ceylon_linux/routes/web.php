@@ -40,3 +40,6 @@ Route::POST('adminTerritory', [TerritoryController::class, 'AddTerritory']);
 // users Registration
 Route::view('usersReg', 'users');
 Route::POST('usersReg', [Users::class, 'userRegistration']);
+
+//product registration
+Route::view('product_regs', 'add-sku');
