@@ -34,4 +34,20 @@ class UserRegistrationRequest extends FormRequest
             'password' => 'required|string|min:8',
         ];
     }
+
+    //custom validation message
+    public function messages()
+    {
+        return [
+            'name.required' => 'The Name field is required.',
+            'nic.required' => 'The NIC field is required.',
+            'address.required' => 'The Address field is required.',
+            'mobile.required' => 'The Mobile field is required.',
+            'gender.required' => 'Please select a Gender.',
+            'territory.required' => 'Please select a Territory.',
+            'username.required' => 'The User Name field is required.',
+            'password.required' => 'The Password field is required.',
+            'password.min' => 'The Password field must be at least :min characters.',
+        ];
+    }
 }

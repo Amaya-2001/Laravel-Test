@@ -26,13 +26,21 @@
                     <div class="form-group row">
                         <label for="name" class="col-sm-4 col-form-label">Name <span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="name">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                            <!-- validation custom message -->
+                            @error('name')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="nic" class="col-sm-4 col-form-label">NIC<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="nic">
+                            <input type="text" class="form-control" name="nic" value="{{ old('nic') }}">
+                            <!-- validation custom message -->
+                            @error('nic')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
@@ -40,42 +48,63 @@
                             Address<span class="text-danger">*</span>
                         </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="address">
+                            <input type="text" class="form-control" name="address" value="{{ old('address') }}">
+                            <!-- validation custom message -->
+                            @error('address')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="mobile" class="col-sm-4 col-form-label">Mobile<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
                             <input type="tel" class="form-control" name="mobile">
+                            <!-- validation custom message -->
+                            @error('mobile')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="email" class="col-sm-4 col-form-label">Email</label>
                         <div class="col-sm-8">
                             <input type="email" class="form-control" name="email">
+                            <!-- validation custom message -->
+                            @error('email')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="gender" class="col-sm-4 col-form-label">Gender</label>
                         <div class="col-sm-8">
                             <select class="form-select form-select-lg" aria-label=".form-select-lg example" name="gender">
-                                <option selected>Select</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
+                                <option value="">Select</option>
+                                <option value="male" @if(old('gender')==='male' ) selected @endif>Male</option>
+                                <option value="female" @if(old('gender')==='female' ) selected @endif>Female</option>
 
                             </select>
+                            <!-- validation custom message -->
+                            @error('gender')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="territory" class="col-sm-4 col-form-label">Territory<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <select class="form-select form-select-lg" aria-label=".form-select-lg example" name="territory">
-                                <option selected>Select</option>
-                                <option value="TERRITORY1">TERRITORY1</option>
-                                <option value="TERRITORY2">TERRITORY2</option>
-                                <option value="TERRITORY3">TERRITORY3</option>
-
+                            <select class="form-select form-select-lg @error('territory') is-invalid @enderror" aria-label=".form-select-lg example" name="territory">
+                                <option value="">Select</option>
+                                <option value="TERRITORY1" @if(old('territory')==='TERRITORY1' ) selected @endif>TERRITORY1</option>
+                                <option value="TERRITORY2" @if(old('territory')==='TERRITORY2' ) selected @endif>TERRITORY2</option>
+                                <option value="TERRITORY3" @if(old('territory')==='TERRITORY3' ) selected @endif>TERRITORY3</option>
                             </select>
+                            <!-- validation custom message -->
+                            @error('territory')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+
+
                         </div>
                     </div>
 
@@ -83,12 +112,20 @@
                         <label for="userName" class="col-sm-4 col-form-label">User Name<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="username">
+                            <!-- validation custom message -->
+                            @error('username')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="password" class="col-sm-4 col-form-label">Password<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
                             <input type="password" class="form-control" name="password">
+                            <!-- validation custom message -->
+                            @error('password')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
 
