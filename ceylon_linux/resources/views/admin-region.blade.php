@@ -14,31 +14,39 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <p class="font-weight-bold text-right mr-5">Welcome System Admin<br>{{ $currentDateTimeFormatted }}</p>
+    <div class=" text-right mr-5">
+        <h6 class="font-weight-bold">Welcome System Admin<br></h6>{{ $currentDateTimeFormatted }}
+    </div>
 
-    <!-- Zone Registration -->
+    <!-- Region Registration -->
     <div class="container">
-        <h6 class="text-center"><b>ADD ZONE</b></h6>
+        <h6 class="text-center"><b>ADD REGION</b></h6>
         <div class="row justify-content-center">
             <div class="col-sm-6">
-                <form action="adminZone" method="POST">
+                <form action="adminRegion" method="POST">
                     @csrf
                     <div class="form-group row">
-                        <label for="zoneCode" class="col-sm-4 col-form-label">Zone Code</label>
+                        <label for="zone" class="col-sm-4 col-form-label">Zone </label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="zoneCode" placeholder="Automatically">
+                            <select class="form-select form-select-lg" aria-label=".form-select-lg example" name="zone">
+                                <option selected>Select</option>
+                                <option value="1">ZONE1</option>
+                                <option value="2">ZONE2</option>
+                                <option value="3">ZONE3</option>
+                            </select>
+
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="zlDescription" class="col-sm-4 col-form-label">Zone Long Description</label>
+                        <label for="zlDescription" class="col-sm-4 col-form-label">Region Code</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="zlDescription" placeholder="Ex:ZONE 1">
+                            <input type="text" class="form-control" name="region_code" placeholder="Automatically">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="shortDescription" class="col-sm-4 col-form-label">Short Description</label>
+                        <label for="regionName" class="col-sm-4 col-form-label">Region Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="shortDescription" placeholder="Ex: Z01">
+                            <input type="text" class="form-control" name="region_name" placeholder="Ex: REGION1">
                         </div>
                     </div>
 

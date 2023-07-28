@@ -7,9 +7,19 @@ namespace App\Http\Controllers;
 use App\Models\Zone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
+
 
 class ZoneController extends Controller
 {
+    public function showAdminZone()
+    {
+        $currentDateTime = Carbon::now();
+        $currentDateTimeFormatted = $currentDateTime->format('l, jS F Y g.iA');
+        return view('admin-zone', compact('currentDateTimeFormatted'));
+    }
+
+
     function AddZone(Request $req)
     {
         try {

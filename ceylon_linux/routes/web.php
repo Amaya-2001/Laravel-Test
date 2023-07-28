@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegionController;
 use App\Http\Controllers\ZoneController;
 use App\Models\Zone;
 use Illuminate\Support\Facades\Route;
@@ -19,10 +20,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/adminZone', function () {
-//     return view('layouts/adminZone');
-// });
-Route::view('/adminZone', 'admin-zone');
-Route::post('/adminZone', [ZoneController::class, 'AddZone']);
+// Add Zone Form
+Route::view('adminZone', 'admin-zone');
+Route::POST('adminZone', [ZoneController::class, 'AddZone']);
+Route::get('adminZone', [ZoneController::class, 'showAdminZone']);
 
-// Route::match(['get', 'post'], '/adminZone', [ZoneController::class, 'AddZone']);
+// Add Region Form
+Route::view('adminRegion', 'admin-region');
+Route::get('adminRegion', [RegionController::class, 'showAdminRegion']);
+Route::POST('adminRegion', [RegionController::class, 'AddRegion']);

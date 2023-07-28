@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Zone extends Model
+class Region extends Model
 {
     use HasFactory;
-    protected $table = 'zones';
+    protected $table = 'regions';
     public $timestamps = false;
 }

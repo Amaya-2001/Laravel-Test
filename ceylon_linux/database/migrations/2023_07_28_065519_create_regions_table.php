@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('zones', function (Blueprint $table) {
-            $table->id('zone_code');
-            $table->string('zone_long_description');
-            $table->string('short_description');
+        Schema::create('regions', function (Blueprint $table) {
+            $table->string('zone');
+            $table->id('region_code');
+            $table->string('region_name');
             $table->timestamps();
         });
     }
@@ -24,7 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('zones');
-        // Schema::drop('zones');
+        Schema::dropIfExists('regions');
     }
 };
