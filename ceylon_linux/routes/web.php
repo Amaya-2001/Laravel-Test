@@ -45,3 +45,6 @@ Route::POST('usersReg', [Users::class, 'userRegistration']);
 //product registration
 Route::view('product_regs', 'add-sku');
 Route::POST('product_regs', [ProductController::class, 'productRegistration']);
+
+//add product order
+Route::view('product_order', 'add-product-order');
