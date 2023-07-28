@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RegionController;
+use App\Http\Controllers\TerritoryController;
 use App\Http\Controllers\ZoneController;
 use App\Models\Zone;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,8 @@ Route::get('adminZone', [ZoneController::class, 'showAdminZone']);
 Route::view('adminRegion', 'admin-region');
 Route::get('adminRegion', [RegionController::class, 'showAdminRegion']);
 Route::POST('adminRegion', [RegionController::class, 'AddRegion']);
+
+// Add Territory
+Route::view('adminTerritory', 'admin-territory');
+Route::get('adminTerritory', [TerritoryController::class, 'showAdminTerritory']);
+Route::POST('adminTerritory', [TerritoryController::class, 'AddTerritory']);
