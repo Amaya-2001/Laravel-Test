@@ -19,18 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', function () {
-    return view('layouts/admin');
-});
-
-// Route::post('/admin', function () {
-
-//     $adminZone = new Zone();
-//     $adminZone->zone_long_description = request('zlDescription');
-//     $adminZone->short_description = request('shortDescription');
-//     $adminZone->save();
-
-//     return redirect()->back()->with('success', 'Data saved successfully!');
+// Route::get('/adminZone', function () {
+//     return view('layouts/adminZone');
 // });
+Route::view('/adminZone', 'admin-zone');
+Route::post('/adminZone', [ZoneController::class, 'AddZone']);
 
-Route::post('/admin', [ZoneController::class, 'AddZone']);
+// Route::match(['get', 'post'], '/adminZone', [ZoneController::class, 'AddZone']);

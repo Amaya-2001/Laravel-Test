@@ -20,7 +20,7 @@
         <h6 class="text-center"><b>ADD ZONE</b></h6>
         <div class="row justify-content-center">
             <div class="col-sm-6">
-                <form action="/admin" method="POST">
+                <form action="/adminZone" method="post">
                     @csrf
                     <div class="form-group row">
                         <label for="zoneCode" class="col-sm-4 col-form-label">Zone Code</label>
@@ -40,12 +40,13 @@
                             <input type="text" class="form-control" id="shortDescription" name="shortDescription" placeholder="Ex: Z01">
                         </div>
                     </div>
-                </form>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-success col-sm-3">SAVE</button>
-                </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success col-sm-3">SAVE</button>
+                    </div>
 
             </div>
+            </form>
 
         </div>
     </div>
