@@ -21,28 +21,28 @@
         <div class="row justify-content-center">
             <div class="col-sm-6">
                 <form action="/admin" method="POST">
-
+                    @csrf
                     <div class="form-group row">
                         <label for="zoneCode" class="col-sm-4 col-form-label">Zone Code</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="zoneCode" placeholder="Automatically">
+                            <input type="text" class="form-control" id="zoneCode" name="zoneCode" placeholder="Automatically">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="zlDescription" class="col-sm-4 col-form-label">Zone Long Description</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="zlDescription" placeholder="Ex:ZONE 1">
+                            <input type="text" class="form-control" id="zlDescription" name="zlDescription" placeholder="Ex:ZONE 1">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="shortDescription" class="col-sm-4 col-form-label">Short Description</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="shortDescription" placeholder="Ex: Z01">
+                            <input type="text" class="form-control" id="shortDescription" name="shortDescription" placeholder="Ex: Z01">
                         </div>
                     </div>
                 </form>
                 <div class="text-center">
-                    <button type="button" class="btn btn-success col-sm-3">SAVE</button>
+                    <button type="submit" class="btn btn-success col-sm-3">SAVE</button>
                 </div>
 
             </div>

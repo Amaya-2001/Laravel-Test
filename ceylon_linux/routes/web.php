@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ZoneController;
 use App\Models\Zone;
 use Illuminate\Support\Facades\Route;
 
@@ -22,13 +23,14 @@ Route::get('/admin', function () {
     return view('layouts/admin');
 });
 
-Route::post('/admin', function () {
-    dd(request()->all());
-    $adminZone = new Zone();
-    $adminZone->zone_long_description = request('zlDescription');
-    $adminZone->short_description = request('shortDescription');
+// Route::post('/admin', function () {
 
-    $adminZone->save();
+//     $adminZone = new Zone();
+//     $adminZone->zone_long_description = request('zlDescription');
+//     $adminZone->short_description = request('shortDescription');
+//     $adminZone->save();
 
-    return redirect()->back()->with('success', 'Data saved successfully!');
-});
+//     return redirect()->back()->with('success', 'Data saved successfully!');
+// });
+
+Route::post('/admin', [ZoneController::class, 'AddZone']);
