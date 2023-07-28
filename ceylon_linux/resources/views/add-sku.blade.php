@@ -21,19 +21,19 @@
                     <div class="form-group row">
                         <label for="sku_id" class="col-sm-4 col-form-label">SKU ID</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="sku_id">
+                            <input type="text" class="form-control" name="sku_id" placeholder="Automatically">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="skuCode" class="col-sm-4 col-form-label">SKU Code<span class="text-danger">*</span></label>
+                        <label for="sku_code" class="col-sm-4 col-form-label">SKU Code<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="skuCode" placeholder="Ex:ZONE 1">
+                            <input type="text" class="form-control" name="sku_code">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="skuName" class="col-sm-4 col-form-label">SKU Name<span class="text-danger">*</span></label>
+                        <label for="sku_name" class="col-sm-4 col-form-label">SKU Name<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="skuName" placeholder="Main Product Name/auto">
+                            <input type="text" class="form-control" name="sku_name" placeholder="Main Product Name/auto">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -43,20 +43,20 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="distrubutorPrice" class="col-sm-4 col-form-label">Distributor Price<span class="text-danger">*</span></label>
+                        <label for="distributor_price" class="col-sm-4 col-form-label">Distributor Price<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" name="distrubutorPrice">
+                            <input type="text" class="form-control" name="distributor_price">
                         </div>
                     </div>
                     <div class="form-group row g-3">
-                        <label for="weight_volume" class="col-sm-4 col-form-label">Weight/Volume<span class="text-danger">*</span></label>
+                        <label for="weight/volume" class="col-sm-4 col-form-label">Weight/Volume<span class="text-danger">*</span></label>
 
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="weightVolume">
+                            <input type="text" class="form-control" name="weight_volume_value">
 
                         </div>
                         <div class="col-sm-2">
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="weight_volume_unit">
                                 <option selected></option>
                                 <option value="mg">mg</option>
                                 <option value="g">g</option>

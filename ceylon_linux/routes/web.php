@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\TerritoryController;
 use App\Http\Controllers\Users;
@@ -43,3 +44,4 @@ Route::POST('usersReg', [Users::class, 'userRegistration']);
 
 //product registration
 Route::view('product_regs', 'add-sku');
+Route::POST('product_regs', [ProductController::class, 'productRegistration']);
