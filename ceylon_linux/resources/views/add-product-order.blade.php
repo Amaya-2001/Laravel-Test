@@ -111,8 +111,8 @@
                         <div class="col"><input type="text" class="form-control" name="unit_price" placeholder="UNIT PRICE"></div>
                         <div class="col"><input type="text" class="form-control" name="avb_qty" placeholder="AVB QTY"></div>
                         <div class="col"><input type="text" class="form-control" name="enter_qty" placeholder="ENTER QTY"></div>
-                        <div class="col"><input type="text" class="form-control" name="units" value="units" placeholder="UNITS" readonly></div>
-                        <div class="col"><input type="text" class="form-control" name="total_price" value="total_price" placeholder="TOTAL PRICE" readonly></div>
+                        <div class="col"><input type="text" class="form-control" name="units" placeholder="UNITS" readonly></div>
+                        <div class="col"><input type="text" class="form-control" name="total_price" placeholder="TOTAL PRICE" readonly></div>
 
                     </div>
 

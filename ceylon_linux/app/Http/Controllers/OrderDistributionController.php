@@ -73,8 +73,6 @@ class OrderDistributionController extends Controller
 
         try {
             $result = $this->calculateAndSaveOrderValue($req);
-
-
             $units = $result['units'];
             $total_price = $result['total_price'];
             $this->savePurchaseDistributionDetails($req);
