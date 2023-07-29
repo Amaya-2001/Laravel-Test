@@ -22,7 +22,7 @@ class RegionController extends Controller
             $region = new Region();
             $region->zone = $req->zone;
             $region->region_code = $req->region_code;
-            $region->region_name     = $req->region_name;
+            $region->region_name = $req->region_name;
             $region->save();
 
             Log::info('Data saved successfully: ' . json_encode($region->toArray()));

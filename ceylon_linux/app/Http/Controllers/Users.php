@@ -19,7 +19,7 @@ class Users extends Controller
             // Hash the password
             $validatedData['password'] = bcrypt($validatedData['password']);
 
-            // Save the user using mass assignment
+            // Save the user 
             $user = UserReg::create($validatedData);
             Log::info('Data saved successfully: ' . json_encode($user->toArray()));
         } catch (\Exception $e) {

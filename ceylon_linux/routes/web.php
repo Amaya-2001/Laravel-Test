@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\OrderDistributionController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PurchaseDistributionDetailsController;
+use App\Http\Controllers\PurchaseOrderDetailsController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\TerritoryController;
 use App\Http\Controllers\Users;
@@ -48,3 +51,5 @@ Route::POST('product_regs', [ProductController::class, 'productRegistration']);
 
 //add product order
 Route::view('product_order', 'add-product-order');
+Route::get('product_order', [OrderDistributionController::class, 'showPurchaseDistributionDate']); //to get the current date automatically
+Route::POST('product_order', [OrderDistributionController::class, 'AddPO']); //save the purchase distrubution details

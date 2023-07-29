@@ -23,7 +23,7 @@
                             <div class="form-group row">
                                 <label for="zone" class=" col-form-label">Zone </label>
                                 <div class="col">
-                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="zone">
                                         <option selected>Select</option>
                                         <option value="ZONE1">ZONE1</option>
                                         <option value="ZONE2">ZONE2</option>
@@ -36,7 +36,7 @@
                             <div class="form-group row">
                                 <label for="region" class=" col-form-label">Region</label>
                                 <div class="col">
-                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="region">
                                         <option selected>Select</option>
                                         <option value="REGION1">REGION1</option>
                                         <option value="REGION2">REGION2</option>
@@ -49,7 +49,7 @@
                             <div class="form-group row">
                                 <label for="territory" class=" col-form-label">Territory</label>
                                 <div class="col">
-                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="territory">
                                         <option selected>Select</option>
                                         <option value="TERRITORY1">TERRITORY1</option>
                                         <option value="TERRITORY2">TERRITORY2</option>
@@ -62,7 +62,7 @@
                             <div class="form-group row">
                                 <label for="distributor" class=" col-form-label">Distributor</label>
                                 <div class="col">
-                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="distributor">
                                         <option selected>Select</option>
                                         <option value="DISTRIBUTOR1">DISTRIBUTOR1</option>
                                         <option value="DISTRIBUTOR2">DISTRIBUTOR2</option>
@@ -80,7 +80,7 @@
                                     <div class="form-group row">
                                         <label for="date" class=" col-form-label">Date</label>
                                         <div class="col">
-                                            <input type="date" class="form-control" name="date" placeholder="Automatically">
+                                            <input type="date" class="form-control" name="date" value="{{ $currentDate }}" placeholder="Automatically">
                                         </div>
                                     </div>
                                 </div>
@@ -106,15 +106,16 @@
 
                     <!-- Add PO table -->
                     <div class="row">
-                        <div class="col"><input type="text" class="form-control" name="remark" placeholder="SKU CODE"></div>
-                        <div class="col"><input type="text" class="form-control" name="remark" placeholder="SKU NAME"></div>
-                        <div class="col"><input type="text" class="form-control" name="remark" placeholder="UNIT PRICE"></div>
-                        <div class="col"><input type="text" class="form-control" name="remark" placeholder="AVB QTY"></div>
-                        <div class="col"><input type="text" class="form-control" name="remark" placeholder="ENTER QTY"></div>
-                        <div class="col"><input type="text" class="form-control" name="remark" placeholder="UNITS"></div>
-                        <div class="col"><input type="text" class="form-control" name="remark" placeholder="TOTAL PRICE"></div>
+                        <div class="col"><input type="text" class="form-control" name="sku_code" placeholder="SKU CODE"></div>
+                        <div class="col"><input type="text" class="form-control" name="sku_name" placeholder="SKU NAME"></div>
+                        <div class="col"><input type="text" class="form-control" name="unit_price" placeholder="UNIT PRICE"></div>
+                        <div class="col"><input type="text" class="form-control" name="avb_qty" placeholder="AVB QTY"></div>
+                        <div class="col"><input type="text" class="form-control" name="enter_qty" placeholder="ENTER QTY"></div>
+                        <div class="col"><input type="text" class="form-control" name="units" value="units" placeholder="UNITS" readonly></div>
+                        <div class="col"><input type="text" class="form-control" name="total_price" value="total_price" placeholder="TOTAL PRICE" readonly></div>
 
                     </div>
+
                     <!-- Add Product Order button -->
                     <div class="text-center mt-5">
                         <button type="submit" class="btn btn-success col-sm-3">Add PO</button>
