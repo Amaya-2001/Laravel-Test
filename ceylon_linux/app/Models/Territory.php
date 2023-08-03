@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Territory extends Model
 {
     use HasFactory;
-    protected $table = 'territorys';
+    protected $table = 'territory';
     public $timestamps = false;
 }

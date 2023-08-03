@@ -8,6 +8,7 @@ use App\Http\Controllers\RegionController;
 use App\Http\Controllers\TerritoryController;
 use App\Http\Controllers\Users;
 use App\Http\Controllers\ZoneController;
+use App\Http\Controllers\ZoneRegionController;
 use App\Models\Zone;
 use Illuminate\Support\Facades\Route;
 
@@ -35,14 +36,17 @@ Route::get('adminZone', [ZoneController::class, 'showAdminZone']);
 Route::view('adminRegion', 'admin-region');
 Route::get('adminRegion', [RegionController::class, 'showAdminRegion']);
 Route::POST('adminRegion', [RegionController::class, 'AddRegion']);
+Route::get('adminRegion', [ZoneController::class, 'getZone']);
 
 // Add Territory
 Route::view('adminTerritory', 'admin-territory');
-Route::get('adminTerritory', [TerritoryController::class, 'showAdminTerritory']);
 Route::POST('adminTerritory', [TerritoryController::class, 'AddTerritory']);
+Route::get('adminTerritory', [ZoneRegionController::class, 'getZoneAndRegionForTerritory']);
+
 
 // users Registration
 Route::view('usersReg', 'users');
+Route::get('usersReg', [TerritoryController::class, 'getTerritory']);
 Route::POST('usersReg', [Users::class, 'userRegistration']);
 
 //product registration

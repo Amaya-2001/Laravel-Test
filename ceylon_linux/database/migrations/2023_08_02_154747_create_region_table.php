@@ -6,15 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('regions', function (Blueprint $table) {
-            $table->string('zone');
+        Schema::create('region', function (Blueprint $table) {
             $table->id('region_code');
             $table->string('region_name');
+            $table->integer('zone_code_pk');
+            $table->foreign('zone_code_pk')
+                ->references('zone_code')
+                ->on('zones')
+                ->onDelete('cascade')
+                ->name('region_zone_code_fk');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('regions');
+        Schema::dropIfExists('region');
     }
 };

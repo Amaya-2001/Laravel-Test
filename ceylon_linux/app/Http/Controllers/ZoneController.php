@@ -35,4 +35,15 @@ class ZoneController extends Controller
             return redirect()->back()->with('error', 'Error occurred while saving data.');
         }
     }
+    public function getZone()
+    {
+        $allZones = Zone::pluck('zone_long_description', 'zone_code');
+        return view('admin-region', compact('allZones'));
+    }
+
+    // public function getZoneForTerritory()
+    // {
+    //     $allZonesAdminTerritory = Zone::pluck('zone_long_description', 'zone_code');
+    //     return view('admin-territory', compact('allZonesAdminTerritory'));
+    // }
 }

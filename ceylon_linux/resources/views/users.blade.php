@@ -89,11 +89,10 @@
                     <div class="form-group row">
                         <label for="territory" class="col-sm-4 col-form-label">Territory<span class="text-danger">*</span></label>
                         <div class="col-sm-8">
-                            <select class="form-select form-select-lg @error('territory') is-invalid @enderror" aria-label=".form-select-lg example" name="territory">
-                                <option value="">Select</option>
-                                <option value="TERRITORY1" @if(old('territory')==='TERRITORY1' ) selected @endif>TERRITORY1</option>
-                                <option value="TERRITORY2" @if(old('territory')==='TERRITORY2' ) selected @endif>TERRITORY2</option>
-                                <option value="TERRITORY3" @if(old('territory')==='TERRITORY3' ) selected @endif>TERRITORY3</option>
+                            <select class="form-select form-select-lg" aria-label=".form-select-lg example" name="territory">
+                                @foreach ($allTerritory as $territory_code => $TerritoryName)
+                                <option value="{{ $territory_code }}">{{ $TerritoryName }}</option>
+                                @endforeach
                             </select>
                             <!-- validation custom message -->
                             @error('territory')
